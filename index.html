@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,6 +8,9 @@
     <link rel="icon" type="image/x-icon" href="Love_files/icon.png">
     <meta name="language" content="es-ES">
     <meta name="title" content="Paola💕">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
     <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
     <script type="text/javascript" src="./Love_files/jscex.min.js"></script>
@@ -19,53 +23,58 @@
     <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
 </head>
 
- <!-- 
-
-Contáctame:
-
-    * Invitame un café
- https://buymeacoffee.com/alexx.dev
-
-    * Portafolio Web
- https://alexxdev.vercel.app
-
-    * Sigueme en tiktok
- https://www.tiktok.com/@alexx.dev?is_from_webapp=1&sender_device=pc 
- 
-    *Canal de WhatsApp
- https://whatsapp.com/channel/0029VazQEXq90x2vIdNkrH1p
-
- 
- WhatsApp: +52 1 55 6628 1018
-
--->
-
 <body>
     <!-- Corazones flotantes -->
     <div class="floating-hearts" id="floating-hearts"></div>
-    
+
     <div id="main">
         <div id="error">
-            Tu navegador que estás usando no es compatible con el contenido que se va a mostrar. 
-            Por favor, usa Google (<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>) 
+            Tu navegador que estás usando no es compatible con el contenido que se va a mostrar.
+            Por favor, usa Google (<a
+                href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)
             o Firefox (<a href="http://firefox.com.cn/download/">Firefox</a>)~
         </div>
 
         <div id="wrap">
             <div id="text">
                 <div id="code">
-                    <span class="say">A ti que te admiro, que constas de una belleza etérea.</span><br><br>
-                    <span class="say">Gracias por tu compañía, las carcajadas y tu escucha estos últimos meses.</span><br><br>
-                    <span class="say">Recuerdo hace unos días decirte la frase: "Dime dónde te duele para besarte más ahí..."</span><br><br>
-                    <span class="say">Pues quise dejar dicho que no tengas miedo o te avergüences de mostrarme tus heridas, tus vulnerabilidades, esas que no quieres que le muestres a nadie.</span><br><br>
-                    <span class="say">Quiero hacerte entender que no me van a asustar, correr no se me da muy bien como habrás notado.</span><br><br>
-                    <span class="say">Si te quiero mi única intención será escuchar tu historia como disco rayado.</span><br><br>
-                    <span class="say">Dime, por favor, dime dónde están... No las pienso tocar, pero necesito el manual tanto para a ellas como para ti, poderlas besar.</span><br><br>
+                    <span class="say">A ti, a quien admiro,</span><br>
+                    <span class="say">hecha de una belleza etérea que no pesa, que flota.</span><br><br>
+
+                    <span class="say">Gracias por tu compañía,</span><br>
+                    <span class="say">por las carcajadas, por tu escucha paciente</span><br>
+                    <span class="say">en estos últimos meses que ya dicen algo.</span><br><br>
+
+                    <span class="say">Recuerdo haberte dicho hace días:</span><br>
+                    <span class="say">"Dime dónde te duele para besarte más ahí…"</span><br><br>
+
+                    <span class="say">Y quise dejarte esto por escrito:</span><br>
+                    <span class="say">no temas, no te avergüences</span><br>
+                    <span class="say">de mostrarme tus heridas,</span><br>
+                    <span class="say">tus vulnerabilidades,</span><br>
+                    <span class="say">esas que no le enseñas a nadie.</span><br><br>
+
+                    <span class="say">No me van a asustar.</span><br>
+                    <span class="say">Huir de ti nunca ha sido lo mío,</span><br>
+                    <span class="say">ya lo habrás notado.</span><br><br>
+
+                    <span class="say">Si te quiero, mi única intención</span><br>
+                    <span class="say">será escuchar tu historia</span><br>
+                    <span class="say">como quien repite un disco rayado</span><br>
+                    <span class="say">porque le gusta cada nota.</span><br><br>
+
+                    <span class="say">Dime, por favor, dime dónde están.</span><br>
+                    <span class="say">No pienso tocarlas,</span><br>
+                    <span class="say">pero necesito el manual,</span><br>
+                    <span class="say">el de ellas y el tuyo,</span><br>
+                    <span class="say">para saber exactamente</span><br>
+                    <span class="say">cómo besarlas.</span><br><br>
+
                     <span class="say"><span class="space"></span> — Con amor, Mark</span>
                 </div>
             </div>
 
-            <canvas id="canvas" width="1100" height="680"></canvas>
+            <canvas id="canvas" width="1100" height="880"></canvas>
         </div>
     </div>
 
@@ -77,47 +86,26 @@ Contáctame:
             const heartsContainer = document.getElementById('floating-hearts');
             const heart = document.createElement('div');
             heart.className = 'heart';
-            heart.innerHTML = '❤';
+            heart.innerHTML = '❤️';
             heart.style.left = Math.random() * 100 + '%';
             heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
             heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
             heart.style.animationDelay = Math.random() * 2 + 's';
             heartsContainer.appendChild(heart);
-            
+
             setTimeout(() => {
                 heart.remove();
             }, 12000);
         }
-        
+
         // Crear corazones cada 500ms
         setInterval(createHeart, 500);
-        
+
         // Crear algunos corazones iniciales
-        for(let i = 0; i < 10; i++) {
+        for (let i = 0; i < 10; i++) {
             setTimeout(createHeart, i * 200);
         }
     </script>
 
 </body>
-
- <!-- 
-
-Contáctame:
-
-    * Invitame un café
- https://buymeacoffee.com/alexx.dev
-
-    * Portafolio Web
- https://alexxdev.vercel.app
-
-    * Sigueme en tiktok
- https://www.tiktok.com/@alexx.dev?is_from_webapp=1&sender_device=pc 
- 
-    *Canal de WhatsApp
- https://whatsapp.com/channel/0029VazQEXq90x2vIdNkrH1p
-
- 
- WhatsApp: +52 1 55 6628 1018
-
--->
 </html>

@@ -167,7 +167,7 @@
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
             ctx.font = "12px 微软雅黑,Verdana"; 
-            ctx.fillText("San Valentín", 23, 16);
+            ctx.fillText("Paola M.", 23, 16);
             ctx.restore();
         },
         clear: function() {
