@@ -1,0 +1,272 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ffecd2 100%);
+	background-size: 400% 400%;
+	animation: gradientShift 15s ease infinite;
+	font-size: 20px;
+	font-family: 'Segoe UI', 'Arial', sans-serif;
+	color: #5C4033;
+	overflow: auto;
+	min-height: 100vh;
+}
+
+@keyframes gradientShift {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* Corazones flotantes */
+.floating-hearts {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.heart {
+	position: absolute;
+	color: rgba(190, 26, 37, 0.6);
+	font-size: 20px;
+	animation: floatUp 8s ease-in infinite;
+	text-shadow: 0 0 10px rgba(255, 100, 100, 0.5);
+}
+
+@keyframes floatUp {
+	0% {
+		transform: translateY(100vh) rotate(0deg) scale(1);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-100px) rotate(720deg) scale(0.5);
+		opacity: 0;
+	}
+}
+
+a {
+	color: #5C4033;
+	font-size: 14px;
+}
+
+#main {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+#wrap {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1100px;
+	min-height: 680px;
+	margin-top: 50px;
+	padding: 20px;
+	box-sizing: border-box;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+	background-position: center top !important;
+}
+
+#text {
+	width: 90%;
+	max-width: 440px;
+	height: auto;
+	min-height: 200px;
+	left: 3%;
+	top: 15px;
+	position: absolute;
+	overflow-y: auto;
+	max-height: 660px;
+}
+
+#code {
+	display: none;
+	font-size: 15px;
+	line-height: 1.35;
+	text-shadow: 2px 2px 4px rgba(92, 64, 51, 0.3);
+	animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+	from {
+		text-shadow: 2px 2px 4px rgba(92, 64, 51, 0.3);
+	}
+	to {
+		text-shadow: 2px 2px 15px rgba(190, 26, 37, 0.5), 0 0 25px rgba(255, 100, 100, 0.3);
+	}
+}
+
+#clock-box {
+	position: absolute;
+	left: 60px;
+	top: 570px;
+	font-size: 28px;
+	display: none;
+}
+
+#clock-box a {
+	font-size: 30px;
+	text-decoration: none;
+	color: #be1a25;
+	font-weight: bold;
+}
+
+#clock {
+	margin-left: 5px;
+}
+
+#clock .digit {
+	font-size: 40px;
+}
+
+#canvas {
+	margin: 0 auto;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1100 / 680;
+	display: block;
+	border: none;
+	outline: none;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: crisp-edges;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+	touch-action: manipulation;
+}
+
+#error {
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 60px;
+	display: none;
+}
+
+.hand {
+	cursor: pointer;
+}
+
+.say {
+	margin-left: 5px;
+}
+
+.space {
+	margin-right: 150px;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1200px) {
+	#wrap {
+		margin-top: 10px;
+		min-height: auto;
+		background-image: none !important;
+	}
+	
+	#text {
+		position: relative;
+		left: 0;
+		top: 0;
+		width: 100%;
+		max-width: 100%;
+		text-align: center;
+		padding: 15px 20px;
+		box-sizing: border-box;
+		z-index: 2;
+	}
+	
+	#canvas {
+		position: relative;
+		z-index: 1;
+	}
+	
+	#clock-box {
+		position: relative;
+		left: 0;
+		top: 0;
+		text-align: center;
+		padding: 15px 20px;
+		font-size: 22px;
+		z-index: 2;
+	}
+	
+	#code {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+	
+	#clock-box a {
+		font-size: 24px;
+	}
+	
+	#clock .digit {
+		font-size: 28px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#wrap {
+		padding: 10px;
+	}
+	
+	#code {
+		font-size: 15px;
+		line-height: 1.45;
+	}
+	
+	#clock-box {
+		font-size: 18px;
+		padding: 10px 15px;
+	}
+	
+	#clock-box a {
+		font-size: 20px;
+	}
+	
+	#clock .digit {
+		font-size: 24px;
+	}
+	
+	.say {
+		margin-left: 0;
+	}
+	
+	.space {
+		margin-right: 50px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#code {
+		font-size: 14px;
+		line-height: 1.4;
+	}
+	
+	#clock-box {
+		font-size: 15px;
+	}
+	
+	#clock-box a {
+		font-size: 17px;
+	}
+	
+	#clock .digit {
+		font-size: 20px;
+	}
+	
+	.space {
+		margin-right: 20px;
+	}
+}
